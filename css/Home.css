@@ -1,0 +1,167 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #f8f5f5;
+    width: 100vw;
+}
+main{
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+main > div{
+    width: 100%;
+}
+#upper{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/main.jpg");
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    animation: animateBackground 60s linear infinite alternate;
+    padding: 11% 0px 0px 0px;
+}
+.card {
+    width: 60%;
+    height: fit-content;
+    border-color: black;
+    background-color: rgb(243, 241, 241);
+    margin: auto;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 50%;
+    animation: appear;
+}
+#main-image{
+    width: 100%; 
+    border-radius: 6px;
+    opacity: 0.9;
+}
+.content {
+    width: 50%;
+    padding: 40px;
+}
+.content p {
+    padding: 30px;
+    line-height: 30px;
+}
+
+@keyframes animateBackground {
+    0%{background-position: 0 0;}
+    50%{background-position: 100% 100%;}
+    100%{background-position: 0 100%;}
+}
+@keyframes appeartext {
+    from{font-size: 0em;}
+    to{font-size: 2em;}
+}
+@keyframes appear {
+    from{width: 0px;height: 0px;}
+    to{width: 150px;height: 44px;}
+}
+@keyframes appearlink {
+    from{font-size: 0em;}
+    to{font-size: 0.8em;}
+} 
+@keyframes alert {
+    0%{transform: none;}
+    10%{transform: rotate(10deg);}
+    20%{transform: rotate(-10deg);}
+    30%{transform: rotate(0deg);}
+}
+#upper h1, #name, #motto{
+    font-family: Helvetica,Arial, sans-serif;
+    opacity: 0.9;
+    text-align: center;
+    animation-name: appeartext;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+#more{
+    margin: 0px auto;
+    text-align: center;
+    animation-name: alert;
+    animation-duration: 2s;
+    animation-delay: 1.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+#more a{
+    min-width: 10px;
+    max-width: 150px;
+    margin: 0px auto;
+    background-color: white;
+    font-size: 0.9em;
+    padding: 1%;
+    opacity: 0.8;
+    border-radius: 10px;
+    animation-name: appear;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    
+}
+#more:hover{
+    transition: 0.5s;
+    transform: scale3d(1.2, 1.2, 0.3);
+}
+#content{
+    width: 70%;
+    margin: 40px auto;
+    padding: 4% 4%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#content p{
+    width: 40%;
+    margin: auto 5px;
+    font-size: 1.8em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    word-spacing: 4px;
+    opacity: 0.8;
+}
+@media only screen and (max-width: 850px) {
+    #upper{
+        animation: animateBackground 100s linear infinite alternate;
+    }
+    #upper h1, #name{
+     
+        width: 100vw;
+        text-align: center;
+    }
+    #content{
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #content p{
+        width: 100%;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    #main-image{
+        width: 80%;
+        margin: 22px auto;
+    }
+    #name, #upper h1{
+       left: -22%;
+    }
+   #more a{
+       padding: 4%;
+   }
+    
+}
